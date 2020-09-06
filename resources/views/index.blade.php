@@ -26,79 +26,23 @@
 
 	<!-- Content -->
 	<div class="container mt-5 px-5">
+		<div class="row">
+			<h1> All Category </h1>
+			<br>
+		</div>
 		<!-- Category -->
 		<div class="row">
+          @foreach($categories as $category)
 			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
 				<div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
-				  	<img src="image/category/category_one.png" class="card-img-top" alt="...">
+				  	<img src="{{ asset($category->photo)}}" class="card-img-top" alt="..." width="100px" height="100px">
 				  	<div class="card-body">
-				    	<p class="card-text font-weight-bold text-truncate"> Smart Home </p>
+				    	<p class="card-text font-weight-bold text-truncate"> {{$category->name}}</p>
 				  	</div>
 				</div>
 			</div>
-
-			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-				<div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
-				  	<img src="image/category/category_two.png" class="card-img-top" alt="...">
-				  	<div class="card-body">
-				    	<p class="card-text font-weight-bold text-truncate"> Grocery </p>
-				  	</div>
-				</div>
-			</div>
-
-			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-				<div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
-				  	<img src="image/category/category_three.png" class="card-img-top" alt="...">
-				  	<div class="card-body">
-				    	<p class="card-text font-weight-bold text-truncate"> Cosmetic </p>
-				  	</div>
-				</div>
-			</div>
-
-			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-				<div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
-				  	<img src="image/category/category_four.png" class="card-img-top" alt="...">
-				  	<div class="card-body">
-				    	<p class="card-text font-weight-bold text-truncate"> Stationery </p>
-				  	</div>
-				</div>
-			</div>
-
-			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-				<div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
-				  	<img src="image/category/category_five.png" class="card-img-top" alt="...">
-				  	<div class="card-body">
-				    	<p class="card-text font-weight-bold text-truncate"> Electronic Devices </p>
-				  	</div>
-				</div>
-			</div>
-
-			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-				<div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
-				  	<img src="image/category/category_six.png" class="card-img-top" alt="...">
-				  	<div class="card-body">
-				    	<p class="card-text font-weight-bold text-truncate"> Furniture </p>
-				  	</div>
-				</div>
-			</div>
-
-			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-				<div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
-				  	<img src="image/category/category_seven.png" class="card-img-top" alt="...">
-				  	<div class="card-body">
-				    	<p class="card-text font-weight-bold text-truncate"> Kitchen Apperience </p>
-				  	</div>
-				</div>
-			</div>
-
-			<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12 ">
-				<div class="card categoryCard border-0 shadow-sm p-3 mb-5 rounded text-center">
-				  	<img src="image/category/category_eight.jpg" class="card-img-top" alt="...">
-				  	<div class="card-body">
-				    	<p class="card-text font-weight-bold text-truncate"> Health Care </p>
-				  	</div>
-				</div>
-			</div>
+           @endforeach
+			
 		</div>
 
 		<div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
@@ -115,6 +59,7 @@
 		            <div class="MultiCarousel-inner">
 		            	@foreach($items as $item)
 		                <div class="item">
+		                	<a href="{{ route('itemdetail',$item->id)}}">
 		                    <div class="pad15">
 		                    	<img src="{{asset($item->photo)}}" class="img-fluid">
 		                        <p class="text-truncate">{{$item->name}}</p>
@@ -136,6 +81,7 @@
 								<a href="#" class="addtocartBtn text-decoration-none" data-id="{{$item->id}}" data-name="{{$item->name}}" data-photo="{{$item->photo}}" data-price="{{$item->price}}">Add to Cart</a>
 
 		                    </div>
+		                </a>
 		                </div>
 		                @endforeach
 		                
@@ -734,59 +680,14 @@
 
 	    <!-- Brand Store Item -->
 	    <section class="customer-logos slider mt-5">
+	    	@foreach($brands as $brand)
 	      	<div class="slide">
-	      		<a href="">
-		      		<img src="image/brand/loacker_logo.jpg">
+	      		<a href="{{route('brand',$brand->id)}}">
+		      		<img src="{{ asset($brand->photo)}}" class="img-fluid">
 		      	</a>
 	      	</div>
 	      	
-	      	<div class="slide">
-	      		<a href="">
-	      			<img src="image/brand/lockandlock_logo.png">
-	      		</a>
-	      	</div>
-	      	
-	      	<div class="slide">
-	      		<a href="">
-	      			<img src="image/brand/apple_logo.png">
-	      		</a>
-	      	</div>
-	      	
-	      	<div class="slide">
-	      		<a href="">
-	      			<img src="image/brand/giordano_logo.png">
-	      		</a>
-	      	</div>
-	      	
-	      	<div class="slide">
-	      		<a href="">
-	      			<img src="image/brand/saisai_logo.png">
-	      		</a>
-	      	</div>
-	      	
-	      	<div class="slide">
-	      		<a href="">
-	      			<img src="image/brand/brands_logo.png">
-	      		</a>	
-	      	</div>
-	      	
-	      	<div class="slide">
-	      		<a href="">
-	      			<img src="image/brand/acer_logo.png">
-	      		</a>
-	      	</div>
-	      	
-	      	<div class="slide">
-	      		<a href="">
-	      			<img src="image/brand/bella_logo.png">
-	      		</a>
-	      	</div>
-	      	
-	      	<div class="slide">
-	      		<a href="">
-	      			<img src="image/brand/ariel_logo.png">
-	      		</a>
-	      	</div>
+	      	@endforeach
 	   	</section>
 
 	    <div class="whitespace d-xl-block d-lg-block d-md-none d-sm-none d-none"></div>
@@ -794,5 +695,7 @@
 	</div>
 	@endsection
 
-
+@section('script')
+  <script type="text/javascript" src="{{asset('frontend/js/script.js')}}"></script>
+@endsection
 	

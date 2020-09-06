@@ -33,7 +33,11 @@
                             <div class="btn-gorup">
                                 <a href="#" class="btn btn-primary">Detail</a>
                                 <a href="{{ route('categories.edit', $category->id ) }}" class="btn btn-warning">Edit</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
+                                <form method="post" action="{{route('categories.destroy',$category->id)}}" onsubmit="return confirm('Are you sure?')" class="d-inline-block">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" class="btn btn-danger" value="Delete">
+                            </form>
                             </div>
                         </td>
                     </tr>

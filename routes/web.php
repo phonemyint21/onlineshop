@@ -22,13 +22,17 @@ Route::get('/loginform','ShopController@showLogin')->name('loginpage');
 
 Route::get('/register','ShopController@showRegister')->name('register');
 
+Route::get('filteritems/{id}','ShopController@filteritems')->name('filteritemspage');
+
 Route::get('/shoppingcart','ShopController@showShoppingcart')->name('shoppingcart');
 
 Route::get('/subcategory','ShopController@showSubcategory')->name('subcategory');
 
-Route::get('/brand','ShopController@showBrand')->name('brand');
+Route::get('/brand/{id}','ShopController@showBrand')->name('brand');
 
-Route::get('/itemdetail','ShopController@showItemdetail')->name('itemdetail');
+Route::get('category/{id}','ShopController@showCategory')->name('category');
+
+Route::get('/itemdetail/{id}','ShopController@showItemdetail')->name('itemdetail');
 
 //Backend
 Route::middleware('role:Admin')->group(function(){

@@ -57,48 +57,41 @@
 				      <span class="text-danger">{{ $errors->first('description')}}</span>
 				    </div>
             </div>
-            <div class="form-group row">
-            	<label for="brand" class="col-sm-2 col-form-label">Brand</label>
-            	<div class="col-md-6">
-                    
-            		<select class="form-control form-control-md" id="inputBrand" name="brand">
-            		<optgroup label="Choose Brand">
-            			@foreach($brands as $brand)
-            			<option value="{{$brand->id}}">{{$brand->name}}</option>
-            			@endforeach
-            		</optgroup>
-            		
-            	</select>
-            	<span class="text-danger">{{ $errors->first('brand')}}</span>
-            	</div>
-            	
-            	
-            </div>
-            <div class="form-group row">
-            	<label for="subcategory" class="col-sm-2 col-form-label">Subcategory</label>
-            	<div class="col-md-6">
-            		
-            		<select class="form-control form-control-md" id="inputSubategory" name="category">
-            		<optgroup label="Choose Subcategory">
-            			@foreach($subcategories as $subcategory)
-            			<option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
-            			@endforeach
-            		</optgroup>
-            		
-            	</select>
-            	<span class="text-danger">{{ $errors->first('subcategory')}}</span>
-            	</div>
-            	
-            	</div>
-            
-
-            <div class="form-group row">
-             <div class="col-sm-10">
-             	<input type="submit" class="btn btn-primary" value="update" name="submit">
-             </div>
-           </div> 	
-            
-   	   	  </form>
+            <div class="form-group row {{ $errors->has('brand') ? 'has-error' : '' }}">
+                 <label for="inputBrand" class="col-sm-2 col-form-label">Brand</label>
+                 <div class="col-sm-5">
+                 <select class="form-control form-control-md" id="inputBrand" name="brand">
+                   <optgroup label="Choose Brand">
+                     @foreach($brands as $brand)
+                       <option value="{{$brand->id}}">{{$brand->name}}</option>
+                     @endforeach 
+                   </optgroup>
+                 </select>
+                   <span class="text-danger">{{ $errors->first('brand') }}</span>
+                 </div>
+               </div>
+               <div class="form-group row {{ $errors->has('subcategory') ? 'has-error' : '' }}">
+                 <label for="inputSubcategory" class="col-sm-2 col-form-label">Subcategory</label>
+                 <div class="col-sm-5">
+                   <select class="form-control form-control-md" id="inputSubcategory" name="subcategory">
+                     <optgroup label="Choose Subcategory">
+                       @foreach($subcategories as $subcategory)
+                         <option value="{{$subcategory->id}}">{{$subcategory->name}}</option>
+                       @endforeach 
+                     </optgroup>
+                   </select>
+                   <span class="text-danger">{{ $errors->first('subcategory') }}</span>
+                 </div>
+               </div>
+               <div class="form-group row">
+                 <div class="col-sm-5">
+                   <input type="submit" class="btn btn-primary" name="btnsubmit" value="Update">
+                 </div>
+               </div>
+             </form>
+         </div>
+      </div>
+    </div>
    </div>
 
 @endsection   

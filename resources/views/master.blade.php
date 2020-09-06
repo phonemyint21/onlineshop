@@ -150,260 +150,27 @@
 
 			        </a>
 			        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			        @foreach($categories as $category)
 			          	<li class="dropdown-submenu">
 			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Electronic Devices
+			          			{{$category->name}}
 			          			<i class="icofont-rounded-right float-right"></i>
 			          		</a>
 				            <ul class="dropdown-menu">
 				            	<h6 class="dropdown-header">
-				            		Electronic Devices
+				            		{{$category->name}}
 				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
+				            	@foreach($category->subcategories as $subcategory)
+				              	<li>
+				             <a class="dropdown-item" href="{{route('filteritemspage',$subcategory->id)}}">
+				              		{{$subcategory->name}}</a></li>
+				              	@endforeach
 			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Woman Fashion
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Woman Fashion
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Man Fashion
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Man Fashion
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Beauty
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Beauty
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Toys
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Toys
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Pets
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Pets
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Sports
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Sports
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Health
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Health
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Smart Home
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Smart Home
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Furniture
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Furniture
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Travel
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Travel
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Kitchen
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Kitchen
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Book
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Book
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Stationery
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Stationery
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Home Decor
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Home Decor
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
-			          	<div class="dropdown-divider"></div>
-
-			          	<li class="dropdown-submenu">
-			          		<a class="dropdown-item" href="javascript:void(0)">
-			          			Baby Care
-			          			<i class="icofont-rounded-right float-right"></i>
-			          		</a>
-				            <ul class="dropdown-menu">
-				            	<h6 class="dropdown-header">
-				            		Baby Care
-				            	</h6>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu</a></li>
-				              	<li><a class="dropdown-item" href="{{ route('subcategory') }}">Submenu0</a></li>
-				              
-				            </ul>
-			          	</li>
+			          	 @if (!$loop->last)
+                    <div class="dropdown-divider"></div>
+		                  @endif
+		                        @endforeach
+			          	
 
 			        </ul>
         		</div>
@@ -509,7 +276,7 @@
 		  	</a>
 
 			<div class="collapse sidebardropdown_container_category mt-3" id="brand">
-			    <a href="{{ route('brand') }}" class="py-2"> Brand One </a>
+			    <a href="" class="py-2"> Brand One </a>
 			    <a href="" class="py-2"> Brand Two </a>
 			    <a href="" class="py-2"> Brand Three </a>
 			    <a href="" class="py-2"> Brand Four </a>
